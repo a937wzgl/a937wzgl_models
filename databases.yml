@@ -1,0 +1,62 @@
+databases:
+  - name: "FISH"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/fish?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/fish"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "GAME"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/game?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/game"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "GAME_LOG"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/game_log?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/game_log"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "GAMEACCOUNT"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/gameaccount?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/gameaccount"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "LA_BA"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/la_ba?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/la_ba"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "LANDLORDS"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/landlords?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/landlords"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "QIANG_COW"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/qiang_cow?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/qiang_cow"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "RUNING"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/runing?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/runing"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "TEXAS_HOLDEM"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/texas_holdem?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/texas_holdem"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "YM_MANAGE"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/ym_manage?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/ym_manage"
+    tables: []  # 空数组表示生成所有表
+
+  - name: "YUNNING"
+    dsn: "root:root123@tcp(127.0.0.1:3306)/yunning?charset=utf8mb4&parseTime=True&loc=Local"
+    out_path: "./models/yunning"
+    tables: []  # 空数组表示生成所有表
+
+global:
+  mode: "without_context|with_default_query|with_query_interface"
+  field_with_index_tag: true
+  field_with_type_tag: true
+  field_signable: true
+  field_with_null_tag: true

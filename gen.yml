@@ -1,0 +1,32 @@
+# GORM Gen 配置文件
+version: "0.0.1"
+
+# 数据库配置
+database:
+  driver: mysql
+  source: "root:password@tcp(localhost:3306)/your_database?charset=utf8mb4&parseTime=True&loc=Local"
+
+# 输出配置
+outPath: "./models"
+outFile: "gen.go"
+package: "models"
+
+# 生成模式
+mode: "without_context|with_default_query|with_query_interface"
+
+# 字段配置
+fieldWithIndexTag: true   # 为字段添加索引标签
+fieldWithTypeTag: true    # 为字段添加类型标签
+fieldSignable: true       # 生成可签名字段
+fieldWithNullTag: true    # 为字段添加 null 标签
+
+# 表配置
+tables:
+  # 可以指定特定表，留空则生成所有表
+  # - users
+  # - posts
+  # - comments
+
+# 自定义配置
+# 可以在这里添加更多自定义配置
+
