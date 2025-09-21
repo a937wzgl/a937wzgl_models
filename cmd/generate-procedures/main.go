@@ -23,10 +23,10 @@ type ProcedureInfo struct {
 
 // DatabaseConfig 数据库配置
 type DatabaseConfig struct {
-	Name       string   `json:"name"`
-	DSN        string   `json:"dsn"`
-	OutPath    string   `json:"out_path"`
-	Procedures []string `json:"procedures"`
+	Name       string   `yaml:"name"`
+	DSN        string   `yaml:"dsn"`
+	OutPath    string   `yaml:"out_path"`
+	Procedures []string `yaml:"procedures"`
 }
 
 // Config 完整配置
@@ -51,6 +51,7 @@ func main() {
 	// 生成所有数据库的存储过程包装方法
 	for _, dbConfig := range config.Databases {
 		fmt.Printf("\n正在生成数据库 %s 的存储过程包装方法...\n", dbConfig.Name)
+		fmt.Printf("配置信息: Name=%s, DSN=%s, OutPath=%s\n", dbConfig.Name, dbConfig.DSN, dbConfig.OutPath)
 		err := generateProcedures(dbConfig)
 		if err != nil {
 			log.Printf("生成数据库 %s 的存储过程失败: %v", dbConfig.Name, err)
@@ -87,10 +88,12 @@ func generateProcedures(dbConfig DatabaseConfig) error {
 	}
 
 	// 创建输出目录
+	fmt.Printf("创建输出目录: %s\n", dbConfig.OutPath)
 	err = os.MkdirAll(dbConfig.OutPath, 0755)
 	if err != nil {
-		return fmt.Errorf("创建输出目录失败: %v", err)
+		return fmt.Errorf("创建输出目录失败 (路径: %s): %v", dbConfig.OutPath, err)
 	}
+	fmt.Printf("输出目录创建成功\n")
 
 	// 获取存储过程列表
 	var procedures []ProcedureInfo
